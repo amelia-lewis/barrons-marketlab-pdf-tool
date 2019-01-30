@@ -178,12 +178,16 @@ TYPOGRAPHY
 .text-xxl {
   font-size: var(--font-size-xxl);
   line-height: var(--line-height-xxl);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-reg);
   margin: 0 0 var(--spacer-md);
 }
 
 .text-tight {
   margin: 0;
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
 }
 
 code {
@@ -358,6 +362,26 @@ BUTTONS
 
 
 /********************
+LISTS
+********************/
+
+.ul--bare {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.existing-issue-item:not(:first-of-type) {
+  padding-top: var(--spacer-md);
+}
+
+.existing-issue-item:not(:last-of-type) {
+  border-bottom: 1px solid var(--color-stainless);
+  padding-bottom: var(--spacer-md);
+}
+
+
+/********************
 INPUTS
 ********************/
 
@@ -373,7 +397,7 @@ fieldset {
   font-size: var(--font-size-sm);
   line-height: var(--line-height-sm);
   font-weight: var(--font-weight-med);
-  margin: 0 0 var(--spacer-xs);
+  margin: 0 0 var(--spacer-md);
 }
 
 .label--checkbox-radio {
@@ -388,9 +412,11 @@ fieldset {
   margin: 0 0 calc(1.5 * var(--spacer-sm));
 }
 
-.input,
-.input--text,
-.input--textarea {
+.label > .input {
+  margin: var(--spacer-xs) 0 0;
+}
+
+.input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -401,7 +427,7 @@ fieldset {
   background: var(--color-white);
   color: var(--color-ink);
   padding: var(--spacer-sm);
-  margin: 0 0 var(--spacer-md);
+  margin: 0;
   line-height: var(--line-height-md);
   font-family: var(--fontstack);
   font-size: var(--font-size-md);
@@ -490,6 +516,22 @@ fieldset {
 
 .input--file::-webkit-file-upload-button:focus {
   outline: none;
+}
+
+.input-btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 var(--spacer-sm);
+}
+
+.input-btn-wrapper .label {
+  flex-grow: 1;
+  margin: 0 var(--spacer-md) 0 0;
+}
+
+.input-btn-wrapper .btn--tertiary {
+  margin-top: var(--spacer-md);
 }
 
 
